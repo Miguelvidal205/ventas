@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_ventas_ventasmod_form">
+			<field name="name">Ventas_ventasmod_form</field>
+			<field name="model">ventas_ventasmod</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string= "ventasmod">
+					<group>
+						<field name="nombre"/>
+						<field name="precio"/>
+						<field name="stock"/>
+						<field name="fecha_vencimiento"/>
+						<field name="active"/>
+					</group>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_ventas_ventasmod_tree">
+			<field name="name">Ventas_ventasmod_tree</field>
+			<field name="model">ventas_ventasmod</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<tree string="ventasmod">
+					
+						<field name="nombre"/>
+						<field name="precio"/>
+						<field name="stock"/>
+						<field name="fecha_vencimiento"/>
+						<field name="active"/>
+					
+				</tree>	
+			</field>	
+		</record>
+		<record model="ir.actions.act_window" id="action_ventas_ventasmod">
+			<field name="name">Ventas Ventasmod</field>
+			<field name="res_model">ventas_ventasmod</field>
+			<field name="view_type">form</field>
+			<field name="view_model">tree,form</field>
+		</record>
+		<menuitem name="Ventas" id="menu_ventas" sequence="10"/>
+		<menuitem name="Inicio" id="menu_inicio" parent="menu_ventas" sequence="10"/>
+		<menuitem name="Productos" id="menu_producto" action="action_ventas_ventasmod" parent="menu_inicio" sequence="10"/>
+	</data>
+</openerp>
